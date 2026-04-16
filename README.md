@@ -2,7 +2,7 @@
 
 > **Secure, privacy-first blog publishing platform** — built with Go, Next.js, and a deep respect for your data.
 
-[![CI](https://github.com/your-username/inkvault/workflows/CI/badge.svg)](https://github.com/your-username/inkvault/actions)
+[![CI](https://github.com/AKIB473/inkvault/workflows/CI/badge.svg)](https://github.com/AKIB473/inkvault/actions)
 [![Go Version](https://img.shields.io/badge/go-1.22-blue)](https://golang.org)
 [![Next.js](https://img.shields.io/badge/next.js-14-black)](https://nextjs.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -104,7 +104,7 @@ inkvault/
 
 ### 1. Clone
 ```bash
-git clone https://github.com/your-username/inkvault
+git clone https://github.com/AKIB473/inkvault
 cd inkvault
 ```
 
