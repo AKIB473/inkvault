@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -34,7 +34,7 @@ const visOptions = [
   { value: "private",            label: "Private",            icon: Lock,    desc: "Only you" },
 ] as const
 
-export default function WritePage() {
+function WritePageInner() {
   const router = useRouter()
   const params = useSearchParams()
   const editID = params.get("id")
@@ -196,4 +196,12 @@ function extractText(node: any): string {
   if (!node) return ""
   if (node.type === "text") return node.text ?? ""
   return (node.content ?? []).map(extractText).join(" ")
+}
+
+export default function WritePage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" /></div>}>
+      <WritePageInner />
+    </Suspense>
+  )
 }

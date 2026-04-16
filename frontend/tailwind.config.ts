@@ -9,6 +9,14 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+      },
+      borderColor: {
+        DEFAULT: "hsl(var(--border))",
+      },
       typography: {
         DEFAULT: {
           css: {
