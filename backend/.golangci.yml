@@ -1,0 +1,34 @@
+run:
+  timeout: 5m
+  go: "1.22"
+
+linters:
+  enable:
+    - errcheck       # Check all errors are handled
+    - gosimple       # Simplify code
+    - govet          # Correctness checks
+    - ineffassign    # Detect unused assignments
+    - staticcheck    # Advanced static analysis
+    - unused         # Unused code
+    - gosec          # Security issues
+    - bodyclose      # HTTP response body close
+    - contextcheck   # Proper context propagation
+    - noctx          # No context.Background() in HTTP handlers
+    - prealloc       # Preallocate slices
+    - revive         # Opinionated linter
+
+linters-settings:
+  gosec:
+    excludes:
+      - G304   # File path from variable (acceptable in migration runner)
+  revive:
+    rules:
+      - name: exported
+        disabled: true  # Allow unexported functions without comments in tests
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters: [gosec, errcheck]
+    - path: cmd/seed
+      linters: [gosec]
